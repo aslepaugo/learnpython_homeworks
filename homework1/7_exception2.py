@@ -15,7 +15,7 @@
 def get_summ(num_one, num_two):
     try:
         return int(num_one) + int(num_two)
-    except(ValueError):
+    except ValueError:
         print("Wrong Input Parameters! Please use only numbers.")
     
 if __name__ == "__main__":

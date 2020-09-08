@@ -5,5 +5,5 @@ PROXY_PASSWORD = ''
 
 try:
     from settings_local import *
-except(ImportError):
+except ImportError:
     print("Import Error")
