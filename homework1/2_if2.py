@@ -18,21 +18,14 @@
 def string_comparator(first_string, second_string):
     if type(first_string) is not str or type(second_string) is not str:
         return 0
-    
     if first_string == second_string:
-        return 1
-    else: 
-        if second_string == 'learn':
-            return 3
-        if len(first_string) > len(second_string):
-            return 2
-
+        return 1   
+    if len(first_string) > len(second_string):
+        return 2
+    if second_string == 'learn':
+        return 3
 
 def main():
-    """
-    Эта функция вызывается автоматически при запуске скрипта в консоли
-    В ней надо заменить pass на ваш код
-    """
     #Not a string:
     print(string_comparator(1, 2)) 
     print(string_comparator(1, 'string')) 
