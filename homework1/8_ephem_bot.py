@@ -13,11 +13,11 @@
 
 """
 import logging
-import datetime
 import ephem
+from datetime import datetime
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 
-from settings import *
+import settings 
 
 logging.basicConfig(format='%(name)s - %(levelname)s - %(message)s',
                     level=logging.INFO,
@@ -26,10 +26,10 @@ logging.basicConfig(format='%(name)s - %(levelname)s - %(message)s',
 
 
 PROXY = {
-    'proxy_url': PROXY_URL,
+    'proxy_url': settings.PROXY_URL,
     'urllib3_proxy_kwargs': {
-        'username': PROXY_USERNAME, 
-        'password': PROXY_PASSWORD
+        'username': settings.PROXY_USERNAME, 
+        'password': settings.PROXY_PASSWORD
     }
 }
 
@@ -54,7 +54,7 @@ def show_planet_constellation(bot, update):
 
     if planet_name in LIST_OF_PLANETS:      
         planet = getattr(ephem, planet_name)()
-        planet.compute(datetime.datetime.now())
+        planet.compute(datetime.now())
         update.message.reply_text("{} is in {} constellation now".format(planet_name, ephem.constellation(planet)[1]))  
     else:
         update.message.reply_text("I cannot identify constellation for {}".format(planet_name)) 
@@ -67,7 +67,7 @@ def talk_to_me(bot, update):
  
 
 def main():
-    mybot = Updater(API_KEY, request_kwargs=PROXY)
+    mybot = Updater(settings.API_KEY, request_kwargs=PROXY)
     
     dp = mybot.dispatcher
     dp.add_handler(CommandHandler("start", greet_user))
