@@ -14,26 +14,24 @@
     Программа: Программирую
     
 """
-def ask_user_dict(questionaire):
-    user_question = input()
+QUESTIONAIRE = {
+      "Привет!": "Привет!",
+      "Как дела?": "Хорошо!", 
+      "Что делаешь?": "Программирую",
+      "Какой смысл жизни?": "...42",
+      "Какая погода?": "Приемлимая",
+      "Как тебя зовут?": "Пиу-пиу",
+      "Кто ты?": "Мыслитель",
+      }
 
-    if user_question in questionaire:
-        print(questionaire[user_question])
+def ask_user_dict(user_question):
+    if user_question in QUESTIONAIRE:
+        print(QUESTIONAIRE[user_question])
 
     
 def ask_user():
-    questionaire = {
-        "Привет!": "Привет!",
-        "Как дела?": "Хорошо!", 
-        "Что делаешь?": "Программирую",
-        "Какой смысл жизни?": "...42",
-        "Какая погода?": "Приемлимая",
-        "Как тебя зовут?": "Пиу-пиу",
-        "Кто ты?": "Мыслитель",
-        }
-
     while True:
-        ask_user_dict(questionaire)
+        ask_user_dict(input())
 
     
 if __name__ == "__main__":
