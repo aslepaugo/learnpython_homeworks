@@ -15,8 +15,7 @@
 """
 
 def get_responsibility(person_age):
-    responsibility = ""
-    
+
     if person_age < 3:
         return "Вы слишком молоды. Оставайтесь дома."
     if person_age < 6:

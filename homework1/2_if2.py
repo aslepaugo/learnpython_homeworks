@@ -27,21 +27,21 @@ def string_comparator(first_string, second_string):
 
 def main():
     #Not a string:
-    print(string_comparator(1, 2)) 
-    print(string_comparator(1, 'string')) 
-    print(string_comparator('string', 2)) 
+    assert string_comparator(1, 2) == 0
+    assert string_comparator(1, 'string') == 0
+    assert string_comparator('string', 2) == 0
     #Equal strings
-    print(string_comparator('string', 'string'))
+    assert string_comparator('string', 'string') == 1
     #Equal by len but not by content (None)
-    print(string_comparator('string', 'strong'))
+    assert string_comparator('string', 'strong') == None
     #frist string len is higher but second is 'learn'
-    print(string_comparator('string', 'learn'))
+    assert string_comparator('string', 'learn') == 2
     #first string len is higher and second is not 'learn'
-    print(string_comparator('string_string', 'string'))   
+    assert string_comparator('string_string', 'string') == 2
     #second string len is higher
-    print(string_comparator('string', 'string_string'))
+    assert string_comparator('string', 'string_string') == None
     #second string len is higher but it's 'learn'
-    print(string_comparator('one', 'learn'))  
+    assert string_comparator('one', 'learn') == 3
 
     
 if __name__ == "__main__":

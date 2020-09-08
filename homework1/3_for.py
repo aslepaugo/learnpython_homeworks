@@ -13,8 +13,10 @@ def average_score_report(school):
     school_scores = []
     for school_class in school:
         school_scores += school_class['scores']
-        print("В классе {} средний балл {:.2f}".format(school_class['school_class'], 
-                                sum(school_class['scores']) / len(school_class['scores'])))
+        print("В классе {} средний балл {:.2f}".format(
+            school_class['school_class'], 
+            sum(school_class['scores']) / len(school_class['scores'],
+        )))
     print('-' * 32)
     print("В школе средний бал {:.2f}".format(sum(school_scores) / len(school_scores)))
 

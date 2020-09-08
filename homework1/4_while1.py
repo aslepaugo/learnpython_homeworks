@@ -11,9 +11,9 @@
 
 
 def ask_user():
-    user_response = ''
-    while user_response.lower() != "хорошо":
-      user_response = input("Как дела?\n")
+    user_response = None
+    while user_response != "хорошо":
+      user_response = input("Как дела?\n").lower()
   
 if __name__ == "__main__":
     ask_user()
