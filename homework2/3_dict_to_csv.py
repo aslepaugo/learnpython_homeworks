@@ -31,8 +31,7 @@ def main():
     dialect = csv.excel
     dialect.delimiter = ";"
     with open('export_people.csv', 'w', encoding='utf-8', newline='') as f:
-        fields = people[0].keys()
-        writer = csv.DictWriter(f, fields, dialect=dialect)
+        writer = csv.DictWriter(f, people[0].keys(), dialect=dialect)
 
         writer.writeheader()
         writer.writerows(people)
