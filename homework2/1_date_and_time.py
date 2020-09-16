@@ -21,7 +21,7 @@ def print_days():
         (today - timedelta(1)).strftime(str_format))
         )
     print('{} days ago was {}'.format(
-        delta, (today - timedelta(delta)).strftime(str_format))
+        delta, (today - timedelta(days=delta)).strftime(str_format))
         )
 
 
