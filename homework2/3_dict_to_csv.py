@@ -13,8 +13,8 @@
 import csv
 
 
-def mock_dictionary():
-    return [
+def main():
+    people = [
         {'name': 'Gloria', 'age': 23, 'job': 'Juniot Specialist'},
         {'name': 'Filip', 'age': 32, 'job': 'Supervisor'},
         {'name': 'Jane', 'age': 34, 'job': 'CEO'},
@@ -24,10 +24,6 @@ def mock_dictionary():
         {'name': 'Zosja', 'age': 20, 'job': 'Recruiter'},
         {'name': 'Eliash', 'age': 29, 'job': 'Head of Unit'},
     ]
-
-
-def main():
-    people = mock_dictionary()
     dialect = csv.excel
     dialect.delimiter = ";"
     with open('export_people.csv', 'w', encoding='utf-8', newline='') as f:
